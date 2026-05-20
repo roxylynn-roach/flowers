@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Flowers for Maia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1 class="game-title">Flowers for Maia</h1>
+
+  <div class="container">
+
+    <div class="hud">
+      <div class="hud-stat">
+        <img src="icons/health.png" class="icon" alt="Health">
+
+        <div class="mini-bar">
+          <div id="health-bar"></div>
+        </div>
+      </div>
+
+      <div class="hud-stat">
+        <img src="icons/growth.png" class="icon" alt="Growth">
+
+        <div class="mini-bar">
+          <div id="growth-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="petal-counter">
+      <img src="icons/currency.png" class="icon" alt="Petals">
+      <span id="petal-box">0</span>
+    </div>
+
+    <button id="menu-button" onclick="showMenu()">
+      <img src="icons/menu.png" id="menu-icon" alt="Menu">
+    </button>
+
+    <div id="main-screen">
+      <p id="stage-banner">Stage 1: Sprout</p>
+
+      <p id="message">A tiny dahlia sprout is waiting.</p>
+
+      <img
+        id="flower"
+        src="flower_health_images/stage_1_healthy.png"
+        alt="Dahlia"
+      >
+
+      <div class="buttons">
+        <button onclick="waterFlower()">Water</button>
+        <button id="treat-button" onclick="feedFlower()">
+           Treat
+        </button>
+        <button onclick="playMusic()">Music</button>
+        <button onclick="sellFlower()">Sell Bloom</button>
+      </div>
+              
+
+    </div>
+
+    <div id="menu-screen" class="hidden">
+      <h2>Menu</h2>
+
+      <button onclick="showUpdates()">Developer Updates</button>
+      <button onclick="showMain()">Back to Garden</button>
+    </div>
+    <div id="updates-screen" class="hidden">
+
+  <div class="journal-pages">
+
+    <div class="journal-page">
+      <h2>Developer Journal</h2>
+
+      <p class="journal-note">
+        Welcome to the developer journal. This is where future updates,
+        fixes, and new features will be posted.
+      </p>
+
+      <p>
+        This game is a work in progress and is actively in the debugging
+        stage, made for my girlfriend, Maia.
+      </p>
+
+      <p>
+        I hope you enjoy every little moment here. - Roxy
+      </p>
+
+      <p class="journal-small">
+        Current Version: v1.0
+      </p>
+    </div>
+
+    <div class="journal-page">
+      <h2>Garden Roadmap</h2>
+
+      <p><strong>v1.1</strong> Cozy Update</p>
+      <p>More dialogue, smoother UI, tiny animations.</p>
+
+      <p><strong>v1.2</strong> Shop Update</p>
+      <p>Pots, backgrounds, and flower colors.</p>
+
+      <p><strong>v1.3</strong> Weather Update</p>
+      <p>Rainy days, sunny fields, weather dialogue.</p>
+
+      <p><strong>More coming soon!</strong></p>
+
+      <button onclick="showMenu()">Back</button>
+    </div>
+
+  </div>
+
+</div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

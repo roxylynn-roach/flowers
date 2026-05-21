@@ -231,18 +231,26 @@ function updateTreatButton() {
     treatButton.disabled = true;
 
     let hours =
-      Math.floor(
-        timeLeft / (1000 * 60 * 60)
-      );
+  Math.floor(
+    timeLeft / (1000 * 60 * 60)
+  );
 
-    let minutes =
-      Math.floor(
-        (timeLeft % (1000 * 60 * 60))
-        / (1000 * 60)
-      );
+let minutes =
+  Math.floor(
+    (timeLeft % (1000 * 60 * 60))
+    / (1000 * 60)
+  );
 
-    treatButton.textContent =
-      hours + "h " + minutes + "m";
+let seconds =
+  Math.floor(
+    (timeLeft % (1000 * 60))
+    / 1000
+  );
+
+treatButton.textContent =
+  hours + "h "
+  + minutes + "m "
+  + seconds + "s";
 
   } else {
 
@@ -313,7 +321,43 @@ function updateTreatTimer() {
   timer.textContent = "Next treat: " + hours + "h " + minutes + "m";
 }
 
-setInterval(updateTreatTimer, 1000);
+setInterval(function () {
 
+  updateTreatButton();
+  updateBackground();
+
+
+}, 1000);
+
+function updateBackground() {
+
+  let hour = new Date().getHours();
+
+  let container =
+    document.querySelector(".container");
+
+  if (hour >= 6 && hour < 12) {
+
+    container.style.backgroundImage =
+      'url("backgrounds/background_morning.png")';
+
+  } else if (hour >= 12 && hour < 18) {
+
+    container.style.backgroundImage =
+      'url("backgrounds/background_day.png")';
+
+  } else if (hour >= 18 && hour < 21) {
+
+    container.style.backgroundImage =
+      'url("backgrounds/background_evening.png")';
+
+  } else {
+
+    container.style.backgroundImage =
+      'url("backgrounds/background_night.png")';
+  }
+}
+
+//updateBackground();
 
 loadGame();

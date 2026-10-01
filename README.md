@@ -1,2 +1,2 @@
-# Flowers for Maia
+# Flowers
 A tiny cozy dahlia garden game.
